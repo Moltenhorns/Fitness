@@ -5,10 +5,12 @@ File Name: style.css
 */
 
 /*CSS reset */
-body, header, nav, main, footer, h1, div, img {
+body, header, nav, main, footer, h1, div, img, ul{
     margin: 0;
     padding: 0;
     border: 0;
+    width: 0;
+    height: 0;
 }
 
  /* Style rules for body and images */
@@ -17,8 +19,22 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100%;  
+    max-height: 100%;
     display: block;
+}
+
+/* Style rules for mobile viewport */
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    height: 190px;
+}
+
+header img {
+    margin: 0 auto;
 }
 
 /* Style rule for header */
@@ -29,38 +45,67 @@ header {
 
 /* Style for rules for navigation area */
 nav {
-    width: 70%;
-    float: right;
-    margin: 5em 3em 0 0;
+  padding: 1%;
+  margin-bottom: 1%;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    text-align: right;
+   text-align: center;
 }
 
 nav li {
-    display: inline-block;
     font-size: 1.5em;
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
+    font-family: 'Francis One', sans-serif;
+    border-top: 1px solid #fff;
 }
 
 nav li a {
     display: block;
     color: #fff;
-    text-align: center;
     padding: 0.5em 1em;
     text-decoration: none;
 }
 
+/* Show mobile class, hide tablet-desktop class */
+.mobile {
+    display: block;
+}
+
+.tablet-desktop {
+    display: none;
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
 /* Style rules for main content */
 main {
-    clear: both;
     background-color: #fff;
     padding: 2%;
-    font-size: 1.25em;
+    font-size: 1.15em;
+    font-family: 'Francis One', sans-serif;
+}
+
+.tel-link {
+    background-color: #404040;
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tel-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+}
+
+.hours {
+    margin-left: 10%;
 }
 
 .action {
@@ -70,12 +115,14 @@ main {
 }
 
 #weights, #cardio, #training {
-    width: 29%;
-    float: left;
     margin: 0 2%;
 }
 
-#exercises {
+.round {
+    border-radius: 8px;
+}
+
+/* #exercises {
     clear: left;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
@@ -89,7 +136,7 @@ main {
 
 #exercises dd {
     padding: 0.5% 1% 2% 0;
-}
+} */
 
 .external-link {
     color: #666600;
@@ -101,13 +148,15 @@ main {
     text-align: center;
 }
 
-#contact a {
+#contact .contact-email-link {
     color: #666600;
     text-decoration: none;
 }
 
 .map {
-    border: 8px solid #000;
+    border: 2px solid #000;
+    width: 95%;
+    height: 50%;
 }
 
 /* Style rules for footer content */
